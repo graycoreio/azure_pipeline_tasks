@@ -21,4 +21,4 @@ parameters:
   type: string
 
 steps:
-- script: curl -s --user 'api:${{ parameters.apiKey }}' https://api.mailgun.net/v3/${{ parameters.domainName }}/messages -F from='$<mailgun@${{ parameters.domainName }}>' -F to='${{ join(',', parameters.listOfEmailsToSend) }}' -F subject='${{ parameters.subject }}' -F text='${{ parameters.message }}'
+- script: curl -s --user 'api:${{ parameters.apiKey }}' https://api.mailgun.net/v3/${{ parameters.domainName }}/messages -F from='$<mailgun@${{ parameters.domainName }}>' -F to='${{ parameters.listOfEmailsToSend }}' -F subject='${{ parameters.subject }}' -F text='${{ parameters.message }}'
