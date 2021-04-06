@@ -17,14 +17,8 @@ parameters:
   type: string
   default: ''
 
-- name: user
-  type: string
-  default: ''
-
 - name: listOfEmailsToSend
-  type: object
-  default: ''
-  
+  type: string
 
 steps:
 - script: curl -s --user 'api:${{ parameters.apiKey }}' https://api.mailgun.net/v3/${{ parameters.domainName }}/messages -F from='$<mailgun@${{ parameters.domainName }}>' -F to='${{ join(',', parameters.listOfEmailsToSend) }}' -F subject='${{ parameters.subject }}' -F text='${{ parameters.message }}'

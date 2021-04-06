@@ -8,6 +8,5 @@ An Azure task to send emails using the Mailgun service.
 | domainName| string |
 | message | string |
 | subject | string |
-| user | string |
 | listOfEmailsToSend | string[] |
 
